@@ -1,6 +1,5 @@
-var role = require('role');
-var spawner = require('spawner');
 var behave = require('behavior');
+
 module.exports.loop = function () {
 
     //Game.rooms.map((room) => roomConfig.configure(room));
