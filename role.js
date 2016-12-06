@@ -21,6 +21,8 @@ module.exports.builder = {
                 if (creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(targets[0]);
                 }
+            } else {
+              return 'idle';
             }
         } else {
             var sources = creep
@@ -56,6 +58,8 @@ module.exports.harvester = {
                 if (creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(targets[0]);
                 }
+            } else {
+              return 'idle';
             }
         }
     }
@@ -63,7 +67,7 @@ module.exports.harvester = {
 
 module.exports.upgrader = {
   name: 'upgrader',
-  parts: [MOVE,CARRY,WORK],
+  parts: [MOVE,MOVE,MOVE,CARRY,WORK],
     /** @param {Creep} creep **/
     run: function(creep) {
 

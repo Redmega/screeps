@@ -1,7 +1,9 @@
 var role = require('role');
-var roomConfig = require('roomConfig');
-
+var spawner = require('spawner');
+var behave = require('behavior');
 module.exports.loop = function () {
+
+    //Game.rooms.map((room) => roomConfig.configure(room));
 
     var tower = Game.getObjectById('TOWER_ID');
     if(tower) {
@@ -20,14 +22,7 @@ module.exports.loop = function () {
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
-        if(creep.memory.role == 'harvester') {
-            role.harvester.run(creep);
-        }
-        if(creep.memory.role == 'upgrader') {
-            role.upgrader.run(creep);
-        }
-        if(creep.memory.role == 'builder') {
-            role.builder.run(creep);
-        }
+        //run creep behavior
+        behave.live(creep);
     }
 }
