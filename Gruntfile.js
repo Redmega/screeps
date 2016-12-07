@@ -19,7 +19,8 @@ module.exports = function(grunt) {
       },
       babel: {
         options: {
-          sourceMap: false
+          sourceMap: false,
+          presets: ["es2015"]
         },
         dist: {
           files: [ {
@@ -34,6 +35,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-screeps');
 
-  grunt.registerTask("default", ["babel"]);
+  grunt.registerTask("default", ["babel", "screeps"]);
 
 }

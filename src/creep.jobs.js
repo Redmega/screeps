@@ -1,4 +1,4 @@
-var behave = require('behavior');
+import * as behave from "behavior"
 
 class Job {
   constructor(role){
@@ -114,7 +114,7 @@ var jobs = {
   }
 }
 
-module.exports = {
+export default {
   builder: new Job('builder'),
   harvester: new Job('harvester'),
   upgrader: new Job('upgrader'),

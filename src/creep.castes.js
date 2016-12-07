@@ -1,4 +1,4 @@
-class Caste {
+export class Caste {
   constructor(parts){
     this.body = [];
     this.body.push(MOVE);
@@ -6,21 +6,21 @@ class Caste {
   }
 }
 
-class Peon extends Caste {
+export class Peon extends Caste {
   constructor(parts){
     super(parts);
     this.body.push(CARRY);
   }
 }
 
-class Worker extends Peon {
+export class Worker extends Peon {
   constructor(parts){
     super(parts);
     this.body.push(WORK);
   }
 }
 
-class Transport extends Peon {
+export class Transport extends Peon {
     constructor(parts){
       super(parts);
       this.body.concat([CARRY,MOVE])

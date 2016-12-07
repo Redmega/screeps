@@ -1,7 +1,7 @@
-var castes = require('creep.castes');
-var jobs = require('creep.jobs');
+import {Worker, Transport} from "creep.castes";
+import jobs from "creep.jobs";
 
-var roles = {
+export var roles = {
     builder: {
       name: 'builder',
       caste: new Worker(),
@@ -23,5 +23,3 @@ var roles = {
       job: jobs.scavenger
     }
 };
-
-module.exports = roles;

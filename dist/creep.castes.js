@@ -1,12 +1,16 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Caste = function Caste(parts) {
+var Caste = exports.Caste = function Caste(parts) {
   _classCallCheck(this, Caste);
 
   this.body = [];
@@ -14,7 +18,7 @@ var Caste = function Caste(parts) {
   this.body.concat(parts);
 };
 
-var Peon = function (_Caste) {
+var Peon = exports.Peon = function (_Caste) {
   _inherits(Peon, _Caste);
 
   function Peon(parts) {
@@ -29,7 +33,7 @@ var Peon = function (_Caste) {
   return Peon;
 }(Caste);
 
-var Worker = function (_Peon) {
+var Worker = exports.Worker = function (_Peon) {
   _inherits(Worker, _Peon);
 
   function Worker(parts) {
@@ -44,7 +48,7 @@ var Worker = function (_Peon) {
   return Worker;
 }(Peon);
 
-var Transport = function (_Peon2) {
+var Transport = exports.Transport = function (_Peon2) {
   _inherits(Transport, _Peon2);
 
   function Transport(parts) {

@@ -3,3 +3,4 @@
 scriptlets.js
 credentials.js
 /node_modules
+/dist
