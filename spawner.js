@@ -1,4 +1,4 @@
-const roles = require('roles');
+const roles = require('creep.roles');
 
 module.exports = {
     spawn: (role, spawn, memory) => {
@@ -6,17 +6,18 @@ module.exports = {
             console.log('role not found');
             return;
         }
+        var _role = roles[role];
 
-        let spawnPoint = spawn || Game.spawns['Spawn1'];
-
-        let creepNames = Object.keys(Game.creeps).filter((name) => name.includes(roles[role].name));
+        var spawnPoint = spawn || Game.spawns['Spawn1'];
+        var creepNames = Object.keys(Game.creeps).filter((name) => name.includes(_role.name));
         let name;
         let i = 0;
         do {
-            name = roles[role].name + i++;
+            name = _role.name + i++;
         } while (creepNames.includes(name));
-        return spawnPoint.createCreep(roles[role].parts, name, {
-            role: role
+
+        return spawnPoint.createCreep(_role.caste.body, name, {
+            job: _role.job
         });
     }
 }

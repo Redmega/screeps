@@ -1,9 +1,9 @@
-var behave = require('behavior');
-
 module.exports.loop = function() {
 
-    //Game.rooms.map((room) => roomConfig.configure(room));
+  //Do the initial room config
+  //Game.rooms.map((room) => roomConfig.configure(room));
 
+/* TODO: verify tower logic
     var tower = Game.getObjectById('TOWER_ID');
     if (tower) {
         var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
@@ -17,7 +17,7 @@ module.exports.loop = function() {
         if (closestHostile) {
             tower.attack(closestHostile);
         }
-    }
+    } */
 
     //set timer for garbage collector
     if (Game.time % 10 == 0) {
@@ -33,6 +33,6 @@ module.exports.loop = function() {
     for (var name in Game.creeps) {
         var creep = Game.creeps[name];
         //run creep behavior
-        behave.live(creep);
+        creep.memory.job.run();
     }
 }
