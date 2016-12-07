@@ -31,6 +31,10 @@ module.exports.loop = function () {
         }
     }
 
+    if (!Memory.spawner) {
+        Memory.spawner = require('spawner');
+    }
+
     //tell the creeps to do creep stuff
     for (var name in Game.creeps) {
         var creep = Game.creeps[name];

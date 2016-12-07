@@ -1,9 +1,7 @@
-var spawner = require('spawner');
-
 module.exports = {
     reaper: function(creep) {
         if (creep.ticksToLive < 150 && !creep.memory.replaced) {
-            if(spawner.spawn(creep.memory.role) > 0){
+            if(Memory.spawner.spawn(creep.memory.role) > 0){
               creep.memory.replaced = true;
             }
         }
