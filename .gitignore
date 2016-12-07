@@ -2,3 +2,4 @@
 .tern-project
 scriptlets.js
 credentials.js
+/node_modules

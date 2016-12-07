@@ -1,19 +1,15 @@
-'use strict';
-
 var roles = require('creep.roles');
 
 module.exports = {
-    spawn: function spawn(role, _spawn, memory) {
+    spawn: (role, spawn, memory) => {
         if (!roles[role]) {
             console.log('role not found');
             return;
         }
         var _role = roles[role];
 
-        var spawnPoint = _spawn || Game.spawns['Spawn1'];
-        var creepNames = Object.keys(Game.creeps).filter(function (name) {
-            return name.includes(_role.name);
-        });
+        var spawnPoint = spawn || Game.spawns['Spawn1'];
+        var creepNames = Object.keys(Game.creeps).filter((name) => name.includes(_role.name));
         var name;
         var i = 0;
         do {
@@ -24,4 +20,4 @@ module.exports = {
             job: _role.job
         });
     }
-};
+}
