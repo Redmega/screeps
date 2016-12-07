@@ -5,10 +5,10 @@
 * Fine tune roles to optimize their efforts
 * Create new roles as needed
 * Let upgraders and builders prefer energy from spawn if spawn has energy greater than 50% capacity.
-* Refactor roles into class(es).
 * Refactor parts of scripts for efficiency
 * Learn what else you can do in this game...
 
 ## Done
 * Automatically spawn new creeps to replace dying ones.
-* Refactored roles into modules
+* Refactored roles into castes/jobs
+* Fixed workspace to use grunt-screeps
