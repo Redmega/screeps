@@ -1,3 +1,4 @@
+vare creds = require('credentials');
 module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-screeps');
@@ -5,8 +6,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
         screeps: {
             options: {
-                email: 'angelpiscola@gmail.com',
-                password: 'YOUR_PASSWORD',
+                email: creds.email,
+                password: creds.password,
                 branch: 'default',
                 ptr: false
             },
