@@ -1,11 +1,11 @@
 import { roles } from "creep.roles";
 
-export function spawn(role, spawn, memory){
-    if (!roles[role]) {
+export function spawn(desig, spawn, memory){
+    if (!roles[desig]) {
         console.log('role not found');
         return;
     }
-    var _role = roles[role];
+    var _role = roles[desig];
 
     var spawnPoint = spawn || Game.spawns['Spawn1'];
     var creepNames = Object.keys(Game.creeps).filter((name) => name.includes(_role.name));

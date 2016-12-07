@@ -1,3 +1,6 @@
+import * as Spawner from 'spawner';
+import {Job} from 'creep.jobs';
+
 module.exports.loop = function() {
 
   //Do the initial room config
@@ -22,6 +25,11 @@ module.exports.loop = function() {
     //set timer for garbage collector
     if (Game.time % 10 == 0) {
         for (var name in Memory.creeps) {
+          let creep = Game.creeps[name];
+          //TODO: add to spawn queue
+          if(creep.memory.dying){
+            Spawner.spawn(creep.memory.job.title)
+          }
             if (!Game.creeps[name]) {
                 delete Memory.creeps[name];
                 console.log('Clearing dead creep memory:', name);
@@ -33,6 +41,6 @@ module.exports.loop = function() {
     for (var name in Game.creeps) {
         var creep = Game.creeps[name];
         //run creep behavior
-        creep.memory.job.run();
+        Job.run(creep);
     }
 }
