@@ -1,25 +1,20 @@
 import {Worker, Transport} from "creep.castes";
-import jobs from "creep.jobs";
 
 export var roles = {
     builder: {
       name: 'builder',
       caste: new Worker(),
-      job: jobs.builder
     },
     harvester: {
       name: 'harvester',
-      caste: new Worker(),
-      job: jobs.harvester
+      caste: new Worker()
     },
     upgrader: {
       name: 'upgrader',
-      caste: new Worker([MOVE]),
-      job: jobs.upgrader
+      caste: new Worker([MOVE])
     },
     scavenger: {
       name: 'scavenger',
-      caste: new Transport(),
-      job: jobs.scavenger
+      caste: new Transport()
     }
 };

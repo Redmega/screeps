@@ -1,5 +1,5 @@
 import * as Spawner from 'spawner';
-import {Job} from 'creep.jobs';
+import {Do} from 'creep.do';
 
 module.exports.loop = function() {
 
@@ -27,8 +27,10 @@ module.exports.loop = function() {
         for (var name in Memory.creeps) {
           let creep = Game.creeps[name];
           //TODO: add to spawn queue
-          if(creep.memory.dying){
-            Spawner.spawn(creep.memory.job.title)
+          if(creep.memory.dying && !creep.memory.replaced){
+            if(Spawner.spawn(creep.memory.job.title) > 0){
+              creep.memory.replaced = true;
+            }
           }
             if (!Game.creeps[name]) {
                 delete Memory.creeps[name];
@@ -41,6 +43,6 @@ module.exports.loop = function() {
     for (var name in Game.creeps) {
         var creep = Game.creeps[name];
         //run creep behavior
-        Job.run(creep);
+        Do.live(creep);
     }
 }

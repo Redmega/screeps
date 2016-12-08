@@ -16,6 +16,6 @@ export function spawn(desig, spawn, memory){
     } while (creepNames.includes(name));
 
     return spawnPoint.createCreep(_role.caste.body, name, {
-        job: _role.job
+        job: _role.name
     });
 }

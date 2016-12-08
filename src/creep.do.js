@@ -1,4 +1,13 @@
-export default {
+export var Do = {};
+
+Do.live = function(creep){
+    if(creep.ticksToLive < 200 && !creep.memory.dying){
+       creep.memory.dying = true;
+    }
+  this.jobs[creep.memory.job](creep);
+}
+
+Do.jobs = {
   builder: function(creep) {
       if (creep.memory.building && creep.carry.energy == 0) {
           creep.memory.building = false;
@@ -98,6 +107,6 @@ export default {
   }
   },
   scavenger: function(creep){
-
+    return true;
   }
 }
